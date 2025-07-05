@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://tj2u0rt26qol"
+
+[deps]
+
+files=["res://Resources/GameJobFile.JOBNAME.translation", "res://Resources/GameJobFile.DESCRIPTION.translation", "res://Resources/GameJobFile.SKILLS.translation"]
+
+source_file="res://Resources/GameJobFile.csv"
+dest_files=["res://Resources/GameJobFile.JOBNAME.translation", "res://Resources/GameJobFile.DESCRIPTION.translation", "res://Resources/GameJobFile.SKILLS.translation"]
+
+[params]
+
+compress=true
+delimiter=0
