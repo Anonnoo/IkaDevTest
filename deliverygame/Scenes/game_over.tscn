@@ -1,0 +1,102 @@
+[gd_scene load_steps=9 format=3 uid="uid://cefp0v3lvb28y"]
+
+[ext_resource type="Script" uid="uid://bhn1bkcom4ec4" path="res://Script/game_over.gd" id="1_ojehl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i2yjh"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fo1c"]
+bg_color = Color(0.308074, 0.537965, 0.78023, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ek8ke"]
+bg_color = Color(0.270638, 0.495448, 0.730757, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eoghk"]
+bg_color = Color(0.413757, 0.630429, 0.863365, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_14u15"]
+bg_color = Color(0.308074, 0.537965, 0.78023, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j3ryr"]
+bg_color = Color(0.270638, 0.495448, 0.730757, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rjluv"]
+bg_color = Color(0.413757, 0.630429, 0.863365, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Game Over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ojehl")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_i2yjh")
+
+[node name="GameOver" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -287.0
+offset_right = 287.0
+offset_bottom = 137.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0, 0.227451, 1)
+theme_override_font_sizes/font_size = 100
+text = "GAME OVER"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -216.0
+offset_top = -86.5
+offset_right = 216.0
+offset_bottom = 86.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TryAgain" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_8fo1c")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ek8ke")
+theme_override_styles/normal = SubResource("StyleBoxFlat_eoghk")
+text = "Try Again"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_14u15")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j3ryr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rjluv")
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/TryAgain" to="." method="_on_try_again_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

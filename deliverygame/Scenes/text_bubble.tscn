@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkpfc46f6ske4"]
+
+[ext_resource type="Script" uid="uid://cxqo4qkqefhgt" path="res://Script/text_bubble.gd" id="1_d5vus"]
+[ext_resource type="Texture2D" uid="uid://tf6vsm1kqffv" path="res://Asset/DialogBubble.png" id="1_fj47c"]
+
+[node name="MarginContainer" type="MarginContainer"]
+offset_right = 151.0
+offset_bottom = 118.0
+script = ExtResource("1_d5vus")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_fj47c")
+region_rect = Rect2(0, 32, 256, 224)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(120, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)

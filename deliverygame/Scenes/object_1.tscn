@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://d4lesb8whwcua"]
+
+[ext_resource type="Script" uid="uid://bi1hlpc0ufe8t" path="res://Script/object_1.gd" id="1_kednp"]
+[ext_resource type="Texture2D" uid="uid://c7ts4socyho3n" path="res://Asset/brackeys_platformer_assets/sprites/world_tileset.png" id="2_lm4ri"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vt7io"]
+size = Vector2(15, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kednp"]
+atlas = ExtResource("2_lm4ri")
+region = Rect2(128, 80, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fl4ro"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kednp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kednp"]
+size = Vector2(15, 11)
+
+[node name="Object1" type="RigidBody2D"]
+script = ExtResource("1_kednp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -5.5)
+shape = SubResource("RectangleShape2D_vt7io")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_fl4ro")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, -5.5)
+shape = SubResource("RectangleShape2D_kednp")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

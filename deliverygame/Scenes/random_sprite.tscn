@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi7bow7cfoydc"]
+
+[ext_resource type="Texture2D" uid="uid://c7ts4socyho3n" path="res://Asset/brackeys_platformer_assets/sprites/world_tileset.png" id="1_c7la6"]
+[ext_resource type="Script" uid="uid://dr7cudfadu58y" path="res://Script/random_sprite.gd" id="2_p7jrf"]
+
+[node name="Sprite2D" type="Sprite2D"]
+position = Vector2(0, -6)
+texture = ExtResource("1_c7la6")
+region_enabled = true
+region_rect = Rect2(128, 82, 16, 16)
+script = ExtResource("2_p7jrf")
